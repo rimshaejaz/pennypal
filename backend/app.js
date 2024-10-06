@@ -12,7 +12,7 @@ const app = express();
 // Middlewares
 app.use(express.json());  // REST needs JSON MIME type.
 app.use(cors());          // Help in accessing server 
-app.use("/", routes);
+app.get("/", routes);
 
 app.listen(PORT,() => {
     console.log(`Server listening on port ${PORT}...`);
