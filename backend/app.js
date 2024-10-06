@@ -10,7 +10,7 @@ const app = express();
 
 
 // Middlewares
-app.use("/", express.static('dist'));  // REST needs JSON MIME type.
+app.use("/", express.static('./frontend/build'));  // REST needs JSON MIME type.
 app.use(cors());          // Help in accessing server 
 app.use("/", routes);
 
