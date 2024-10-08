@@ -4,7 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import routes from "./routes/routes.js";
 import mongoose from 'mongoose';
-import path from 'path';
+// import path from 'path';
 
 const PORT = process.env.PORT;
 const app = express();
@@ -27,16 +27,16 @@ mongoose
 
 
 // ------DEPLOYMENT---------
-const _dirname1 = path.resolve()
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(_dirname1, '../frontend/build')));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(_dirname1, "..", "frontend", "build", "index.html"))
-    })
+//const _dirname1 = path.resolve()
+//if(process.env.NODE_ENV === 'production') {
+//    app.use(express.static(path.join(_dirname1, '../frontend/build')));
+//    app.get('*', (req, res) => {
+//        res.sendFile(path.resolve(_dirname1, "..", "frontend", "build", "index.html"))
+//    })
 
-} else {
-    app.get("/", (req, res) => {
-        res.send("API is running successfully.")
-    });
-}
+//} else {
+//    app.get("/", (req, res) => {
+//        res.send("API is running successfully.")
+//    });
+//}
 // ------DEPLOYMENT---------
