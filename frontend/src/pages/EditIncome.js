@@ -32,7 +32,7 @@ function EditIncome({ setIncome }) {
         e.preventDefault();
         try {
             const updatedIncome = { ...income, category };
-            const response = await fetch(`/incomes/${income.id}`, {
+            const response = await fetch(`https://pennypal-backend-7c3h.onrender.com/incomes/${income.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function EditIncome({ setIncome }) {
     useEffect(() => {
       const fetchCategories = async () => {
           try {
-              const response = await fetch('/category/type?type=Income'); 
+              const response = await fetch('https://pennypal-backend-7c3h.onrender.com/category/type?type=Income'); 
               if (response.ok) {
                   const data = await response.json();
                   setCategories(data);
@@ -74,7 +74,7 @@ function EditIncome({ setIncome }) {
     const handleCategoryChange = (e) => {
       const selectedValue = e.target.value;
       if (selectedValue === 'add-category') {
-          redirect('/category'); 
+          redirect('https://pennypal-backend-7c3h.onrender.com/category'); 
       } else {
           setCategory(selectedValue);
       }
