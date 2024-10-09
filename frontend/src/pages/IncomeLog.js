@@ -36,7 +36,7 @@ function IncomeLog() {
     // DELETE a single income entry  
     const onDeleteIncome = async (id) => {
         try {
-        const response = await fetch(`/incomes/${id}`, { method: 'DELETE' });
+        const response = await fetch(`https://pennypal-backend-7c3h.onrender.com/incomes/${id}`, { method: 'DELETE' });
         if (response.status === 200) {
             // reload all incomes 
             const getResponse = await fetch('/incomes');
