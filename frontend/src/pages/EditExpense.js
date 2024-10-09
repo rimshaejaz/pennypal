@@ -32,7 +32,7 @@ function EditExpense({ setExpense }) {
         e.preventDefault();
         try {
             const updatedExpense = { ...expense, category };
-            const response = await fetch(`/expenses/${expense.id}`, {
+            const response = await fetch(`https://pennypal-backend-7c3h.onrender.com/expenses/${expense.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ function EditExpense({ setExpense }) {
     useEffect(() => {
       const fetchCategories = async () => {
           try {
-              const response = await fetch('/category/type?type=Expense'); 
+              const response = await fetch('https://pennypal-backend-7c3h.onrender.com/category/type?type=Expense'); 
               if (response.ok) {
                   const data = await response.json();
                   setCategories(data);
@@ -74,7 +74,7 @@ function EditExpense({ setExpense }) {
     const handleCategoryChange = (e) => {
       const selectedValue = e.target.value;
       if (selectedValue === 'add-category') {
-          redirect('/category'); 
+          redirect('https://pennypal-backend-7c3h.onrender.com/category'); 
       } else {
           setCategory(selectedValue);
       }
