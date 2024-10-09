@@ -36,7 +36,10 @@ export const AddIncome = () => {
     const addIncome = async (e) => {
         e.preventDefault();
 
-        const newIncome= { title, amount, date, description, category };
+        // Ensure the date is in the correct format (yyyy-MM-dd)
+        const formattedDate = new Date(date).toISOString().split('T')[0];
+        
+        const newIncome= { title, amount, date: formattedDate, description, category };
         const response = await fetch('/createIncome', {
             method: 'post',
             body: JSON.stringify(newIncome),
