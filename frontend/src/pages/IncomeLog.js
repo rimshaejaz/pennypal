@@ -16,7 +16,7 @@ function IncomeLog() {
     useEffect(() => {
         // RETRIEVE all incomes
         const loadIncomes = async () => {
-        const response = await fetch('https://pennypal-backend-7c3h.onrender.com/incomes/incomes');
+        const response = await fetch('https://pennypal-backend-7c3h.onrender.com/incomes');
         const incomes = await response.json();
         // sort incomes by date 
         const sortedIncomes = incomes.sort((a, b) => new Date(b.date) - new Date(a.date))
