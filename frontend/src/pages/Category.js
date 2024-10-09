@@ -22,10 +22,10 @@ export const AddCategory = () => {
         });
         if (response.status === 201){
             alert(`The request was successful. The category has been added.`);
-            redirect("/category");
+            redirect("https://pennypal-backend-7c3h.onrender.com/category");
         } else {
             alert(`Invalid category parameter. Try again. = ${response.status}`);
-            redirect("/category");
+            redirect("https://pennypal-backend-7c3h.onrender.com/category");
         }
         } catch (error) {
             alert(`aN ERROR OCCURED: ${error.message}`);
