@@ -18,7 +18,7 @@ export const AddExpense = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const response = await fetch('/category/type?type=Expense'); 
+                const response = await fetch('https://pennypal-backend-7c3h.onrender.com/category/type?type=Expense'); 
                 if (response.ok) {
                     const data = await response.json();
                     setCategories(data);
@@ -58,7 +58,7 @@ export const AddExpense = () => {
     const handleCategoryChange = (e) => {
         const selectedValue = e.target.value;
         if (selectedValue === 'add-category') {
-            redirect('/category'); 
+            redirect('https://pennypal-backend-7c3h.onrender.com/category'); 
         } else {
             setCategory(selectedValue);
         }
