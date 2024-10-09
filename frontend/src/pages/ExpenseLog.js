@@ -17,7 +17,7 @@ function ExpenseLog() {
     useEffect(() => {
         // RETRIEVE all expenses
         const loadExpenses = async () => {
-        const response = await fetch('/expenses');
+        const response = await fetch('https://pennypal-backend-7c3h.onrender.com/expenses');
         const expenses = await response.json();
         // sort expenses by date 
         const sortedExpenses = expenses.sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -35,7 +35,7 @@ function ExpenseLog() {
     // DELETE a single expense 
     const onDeleteExpense = async (id) => {
         try {
-        const response = await fetch(`/expenses/${id}`, { method: 'DELETE' });
+        const response = await fetch(`https://pennypal-backend-7c3h.onrender.com/expenses/${id}`, { method: 'DELETE' });
         if (response.status === 200) {
             // reload all expenses
             const getResponse = await fetch('/expenses');
